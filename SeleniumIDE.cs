@@ -3,22 +3,27 @@ namespace Loja139;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-
 using NUnit.Framework;
+using WebDriverManager;
+using WebDriverManager.DriverConfigs.Impl;
+
 [TestFixture]
-public class FluxoSimplesTest {
+public class SelecionarProdutoTest {
   private IWebDriver driver;
 
   [SetUp]
   public void SetUp() {
-    //driver = new ChromeDriver();
-    driver = new FirefoxDriver();
-    
+    new DriverManager().SetUpDriver(new ChromeConfig());
+    driver = new ChromeDriver();
+    //driver = new FirefoxDriver();
+    driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(10000);    
   }
+
   [TearDown]
   protected void TearDown() {
-    driver.Quit();
+    driver.Quit();    
   }
+
   [Test]
   public void FluxoSimples() {
     driver.Navigate().GoToUrl("https://www.saucedemo.com/");
@@ -37,5 +42,7 @@ public class FluxoSimplesTest {
     Assert.That(driver.FindElement(By.CssSelector(".inventory_item_name")).Text, Is.EqualTo("Sauce Labs Backpack"));
     Assert.That(driver.FindElement(By.CssSelector(".inventory_item_price")).Text, Is.EqualTo("$29.99"));
     driver.FindElement(By.CssSelector("*[data-test=\"checkout\"]")).Click();
+    Thread.Sleep(5000);
+    driver.Close();
     }
 }

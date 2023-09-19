@@ -1,0 +1,56 @@
+# Arquivos e diretórios gerados automaticamente
+obj/
+bin/
+*.suo
+*.user
+*.sln.docstates
+
+# Dependências do NuGet
+packages/
+
+# Arquivos de compilação
+*.dll
+*.exe
+*.pdb
+*.dll.config
+
+# Logs e relatórios de teste
+TestResults/
+
+# Arquivos temporários
+[Tt]emp/
+[Vv]isual[Ss]tudio[Oo]nline.cache
+*.log
+*.vscode/
+
+# Arquivos de configuração de projeto
+.vscode/
+.vscodeignore
+*.suo
+*.user
+*.sln.docstates
+
+# Cache e diretórios de build
+bin/
+obj/
+
+# Arquivos de usuário específicos
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arquivos de configuração do Rider
+.idea/
+
+# Logs e arquivos de dump de exceção
+*.log
+*.log.*
+__idea
+
+# Diretórios gerados por Rider
+.idea/
+
+# Diretórios gerados por Visual Studio
+.vscode/
+.vs/
